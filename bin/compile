@@ -58,8 +58,7 @@ if [[ -f $BUILD_DIR/.r-buildpack-version ]]; then
   BUILD_PACK_VERSION=`read_var $BUILD_DIR/.r-buildpack-version`
 else
   #BUILD_PACK_VERSION="20160322-0811"
-  BUILD_PACK_VERSION="20150719-0018" 
-  
+  BUILD_PACK_VERSION="20150719-0045" 
 fi
 
 S3_BUCKET="heroku-buildpack-r"
