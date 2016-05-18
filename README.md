@@ -1,7 +1,7 @@
-# Heroku buildpack: R
+# Heroku and Cloud Foundry buildpack: R
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for applications which use
-[R](http://www.r-project.org/) for statistical computing and [CRAN](http://cran.r-project.org/) for R packages.
+This is a Cloud Foundry and Heroku buildpack for applications which use
+[R](http://www.r-project.org/) for statistical computing and [CRAN](http://cran.r-project.org/) for R packages.  It is nearly identical to a previous version of the Heroku buildpack which is compatible with Shiny.  As of May 18, 2016, the current version of the Heroku buildpack may not be fully compatable with Shiny, [details here](https://github.com/virtualstaticvoid/heroku-buildpack-r/issues/56).  
 
 R is ‘GNU S’, a freely available language and environment for statistical computing and graphics which provides
 a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time
@@ -12,33 +12,8 @@ the [R project homepage](http://www.r-project.org/) for further information.
 store identical, up-to-date, versions of code and documentation for R.
 
 ## Usage
-Example usage:
-
-```
-$ ls
-init.r prog1.r prog2.r ...
-
-$ heroku create --stack cedar-14 --buildpack http://github.com/virtualstaticvoid/heroku-buildpack-r.git#cedar-14
-
-$ git push heroku master
-...
------> Heroku receiving push
------> Fetching custom buildpack
------> R app detected
------> Vendoring R x.xx.x
-       Executing init.r script
-...
------> R successfully installed
-```
-
 The buildpack will detect your app makes use of R if it has the `init.r` file in the root.
 The R runtime is vendored into your slug, and includes the gcc compiler for fortran support.
-
-To reference a specific version of the build pack, add the Git branch or tag name to the end of the build pack URL.
-
-```
-$ heroku create --stack cedar-14 --buildpack http://github.com/virtualstaticvoid/heroku-buildpack-r.git#master
-```
 
 ## Installing R packages
 During the slug compilation process, the `init.r` R file is executed. Put code in this file to install any packages you may require.
@@ -57,30 +32,6 @@ R packages can also be included in your project source and installed when the `i
 ```
 install.packages("optional-path-to-packages/local-r-package-file.tar.gz", repos=NULL, type="source")
 ```
-
-## R Console
-You can also run the R console application as follows:
-
-```
-$ heroku run R
-```
-
-Type `q()` to exit the console when you are finished.
-
-_Note that the Heroku slug is read-only, so any changes you make during the session will be discarded._
-
-## Scheduling a recurring job
-You can use the [Heroku scheduler](https://addons.heroku.com/scheduler) to schedule a recurring R process.
-
-The following command would run `prog.r`:
-
-`R -f ./prog.r --gui-none --no-save`
-
-## Using in your applications
-This buildpack can be used in conjunction with other supported language stacks on Heroku by
-using multiple buildpacks. See [Using Multiple Buildpacks for an App](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app).
-
-See the example [test applications](test) which show how to use R from the console and various other examples.
 
 ## R Binaries
 The binaries used by the buildpack are hosted on AWS S3 at [s3://heroku-buildpack-r](https://heroku-buildpack-r.s3.amazonaws.com).
