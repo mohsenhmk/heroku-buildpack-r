@@ -66,7 +66,7 @@ R_BINARIES="http://${S3_BUCKET}.s3.amazonaws.com/${STACK}/R-${R_VERSION}-binarie
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 #CRAN_MIRROR="http://cran.revolutionanalytics.com"
-CRAN_MIRROR="https://mran.microsoft.com/snapshot/2016-04-01"
+CRAN_MIRROR="https://mran.microsoft.com/snapshot/2015-07-01"
 
 mkdir -p $CACHE_DIR
 
