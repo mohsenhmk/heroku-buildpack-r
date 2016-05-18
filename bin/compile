@@ -48,7 +48,7 @@ fi
 if [[ -f $BUILD_DIR/.r-version ]]; then
   R_VERSION=`read_var $BUILD_DIR/.r-version`
 else
-  #R_VERSION="3.2.4"
+  #R_VERSION="3.2.4" Latest buildpack has bugs with shiny per https://github.com/virtualstaticvoid/heroku-buildpack-r/issues/56.  Use older version of R that is compatible
   R_VERSION="3.2.1"
 
 fi
@@ -57,7 +57,7 @@ fi
 if [[ -f $BUILD_DIR/.r-buildpack-version ]]; then
   BUILD_PACK_VERSION=`read_var $BUILD_DIR/.r-buildpack-version`
 else
-  #BUILD_PACK_VERSION="20160322-0811"
+  #BUILD_PACK_VERSION="20160322-0811" Latest buildpack has bugs with shiny per https://github.com/virtualstaticvoid/heroku-buildpack-r/issues/56.  Use older version of buildpack that is compatible
   BUILD_PACK_VERSION="20150719-0045" 
 fi
 
@@ -66,7 +66,6 @@ R_BINARIES="http://${S3_BUCKET}.s3.amazonaws.com/${STACK}/R-${R_VERSION}-binarie
 
 VENDOR_DIR="$BUILD_DIR/vendor"
 CRAN_MIRROR="http://cran.revolutionanalytics.com"
-#CRAN_MIRROR="https://mran.microsoft.com/snapshot/2015-07-01"
 
 mkdir -p $CACHE_DIR
 
