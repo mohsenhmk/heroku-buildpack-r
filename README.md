@@ -1,7 +1,11 @@
 # Cloud Foundry compatible Heroku buildpack for R
 
 This is a Cloud Foundry compatible Heroku buildpack for R for applications which use
-[R](http://www.r-project.org/) for statistical computing and [CRAN](http://cran.r-project.org/) for R packages.  It is nearly identical to a previous version of the Heroku buildpack which is compatible with Shiny.  As of May 18, 2016, the latest version of the Heroku buildpack on the cedar-14 branch may not be fully compatable with Shiny, [details here](https://github.com/virtualstaticvoid/heroku-buildpack-r/issues/56).  
+[R](http://www.r-project.org/) for statistical computing and [CRAN](http://cran.r-project.org/) for R packages.  
+
+Note that the R version of this buildpack is 3.2.1.  
+* It is nearly identical to a previous version of the Heroku buildpack which is compatible with Shiny.  
+* As of May 18, 2016, the latest version of the Heroku buildpack on the cedar-14 branch may not be fully compatable with Shiny, [details here](https://github.com/virtualstaticvoid/heroku-buildpack-r/issues/56).  
 
 R is ‘GNU S’, a freely available language and environment for statistical computing and graphics which provides
 a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time
