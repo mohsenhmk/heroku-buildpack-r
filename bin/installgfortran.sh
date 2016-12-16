@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 server="gfortran.meteodat.ch"
-instdir="/app/vendor/R/bin"
+instdir="/usr/local/gfortran-bin"
 arch="x86_64"
 
 if [ $# -eq 0 -o "$1" == "-h" -o "$1" == "--help" ]; then
