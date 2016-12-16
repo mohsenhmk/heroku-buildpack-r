@@ -92,11 +92,12 @@ mkdir -p /app/vendor/R
 cp -R $VENDOR_DIR/R/* /app/vendor/R
 
 uname -a
-echo "try installing gfortran"
-sudo apt-get install gfortran
+echo "copy gfortran to bin folder"
+cp $BUILDPACK_DIR/bin/gfortran /bin
 # trialed and errored on this; copy over libs to gfortran, so
 # that liblto_plugin.so and others can be found
 # (tried using LDFLAGS, LD_LIBRARY_PATH and LIBRARY_PATH but didn't work)
+
 cp -R /usr/lib/gcc/x86_64-linux-gnu/$GCC_VERSION/* /app/.apt/usr/lib/gcc/x86_64-linux-gnu/$GCC_VERSION
 # cp /usr/lib/gcc/x86_64-linux-gnu/$GCC_VERSION/liblto_plugin.so /app/.apt/usr/lib/gcc/x86_64-linux-gnu/$GCC_VERSION/liblto_plugin.so
 
