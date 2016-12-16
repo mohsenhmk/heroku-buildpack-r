@@ -133,4 +133,3 @@ while [ $# -gt 0 ]; do
   $instdir/bin/gfortran -v
   echo ""
 done
-exit
