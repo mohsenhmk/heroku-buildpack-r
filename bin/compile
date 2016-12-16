@@ -94,6 +94,7 @@ cp -R $VENDOR_DIR/R/* /app/vendor/R
 uname -a
 
 alias gfortran="$BUILDPACK_DIR/bin/gfortran"
+gfortran -v
 # trialed and errored on this; copy over libs to gfortran, so
 # that liblto_plugin.so and others can be found
 # (tried using LDFLAGS, LD_LIBRARY_PATH and LIBRARY_PATH but didn't work)
