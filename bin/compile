@@ -110,7 +110,7 @@ cp "$BUILDPACK_DIR/bin/r_environment.sh" "$BUILD_DIR/.profile.d/r_environment.sh
 mkdir -p /app/vendor/R/lib64/R/doc/html
 touch /app/vendor/R/lib64/R/doc/html/R.css
 
-source "$BUILDPACK_DIR/bin/installgfortran.sh" -d "/app/vendor/R/bin" "4.8"
+source "$BUILDPACK_DIR/bin/installgfortran.sh" -d "/app/vendor/R/bin/gfortran" "4.8"
 # install dependencies from CRAN
 echo "Executing init.r script" | indent
 

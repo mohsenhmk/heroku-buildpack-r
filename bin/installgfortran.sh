@@ -88,7 +88,7 @@ while [ $# -gt 0 ]; do
 
   if [ ! -d "$instdir" ]; then mkdir -p "$instdir"; fi
   cd "$instdir" || exit 1
-  rm -rf *
+  # --rm -rf *
 
   #---get GCC binary and install it
   echo ""
@@ -133,5 +133,4 @@ while [ $# -gt 0 ]; do
   $instdir/bin/gfortran -v
   echo ""
 done
-
 exit
