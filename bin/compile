@@ -126,7 +126,7 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 # cd /
-# find . -name "gfortran"
+ find . -name "v8"
 
 
 
