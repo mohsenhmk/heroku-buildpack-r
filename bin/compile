@@ -122,12 +122,13 @@ function indent() {
   esac
 }
 echo "Updating apt caches"
-APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
-apt-get $APT_OPTIONS update | indent
+
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
+APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
+apt-get $APT_OPTIONS update | indent
 apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gfortran | indent
 
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
