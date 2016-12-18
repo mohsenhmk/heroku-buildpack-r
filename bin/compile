@@ -127,8 +127,8 @@ done
 
 
 echo "findstuf"
-cd /
-find . -name "libv8"
+cd $BUILD_DIR/.apt/
+ls -R | grep v8
 
 
 
