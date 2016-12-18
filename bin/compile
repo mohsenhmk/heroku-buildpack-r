@@ -128,7 +128,7 @@ done
 
 echo "findstuf"
 cd /
-find . -name "v8"
+find . -name "libv8"
 
 
 
