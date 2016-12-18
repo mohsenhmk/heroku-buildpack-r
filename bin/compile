@@ -112,7 +112,17 @@ touch /app/vendor/R/lib64/R/doc/html/R.css
 
 # source "$BUILDPACK_DIR/bin/installgfortran.sh" -d "/app/vendor/R/bin/gfortran" "4.8"
 
+LP_DIR=`cd $(dirname $0); cd ..; pwd`
 
+function indent() {
+  c='s/^/       /'
+  case $(uname) in
+    Darwin) sed -l "$c";;
+    *)      sed -u "$c";;
+  esac
+}
+topic "Updating apt caches"
+apt-get $APT_OPTIONS update | indent
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
