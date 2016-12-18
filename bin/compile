@@ -126,11 +126,6 @@ done
 # cd /
 # find . -name "gfortran"
 
-/tmp/staged/app/.apt/usr/bin/gfortran
-
-
-
-
 
 
 
