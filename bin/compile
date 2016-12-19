@@ -126,9 +126,9 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 
-# echo "findstuf"
-# cd $BUILD_DIR/.apt/
-# ls -R | grep v8
+echo "findstuf"
+cd $BUILD_DIR/.apt/
+ls -R | grep v8
 
 
 
