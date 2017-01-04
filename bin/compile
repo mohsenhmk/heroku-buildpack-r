@@ -119,7 +119,7 @@ apt-get $APT_OPTIONS update | indent
 apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gfortran | indent
 
 # apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libv8-dev | indent
-cp /app/pandoc.deb $APT_CACHE_DIR/archives/
+cp $BUILD_DIR/pandoc.deb $APT_CACHE_DIR/archives/
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   echo "Installing $(basename $DEB)"
   dpkg -x $DEB $BUILD_DIR/.apt/
