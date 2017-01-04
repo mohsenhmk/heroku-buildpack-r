@@ -129,7 +129,7 @@ sudo dpkg -i $DEB
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
 
-dpkg -i /app/pandoc.deb $BUILD_DIR/.apt/
+dpkg -x /app/pandoc.deb $BUILD_DIR/.apt/
 
 
 cp -R $BUILD_DIR/.apt/* /app/.apt
