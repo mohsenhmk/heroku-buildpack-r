@@ -158,6 +158,7 @@ touch /app/vendor/R/lib64/R/doc/html/R.css
 
 
 # install dependencies from CRAN
+echo $CF_STAGING_TIMEOUT
 echo "Executing init.r script" | indent
 
 # set the CRAN mirror and run the init.r program
