@@ -109,7 +109,7 @@ function indent() {
   esac
 }
 echo "Updating apt caches"
-
+ls /usr/lib/
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
