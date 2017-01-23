@@ -119,7 +119,7 @@ mkdir -p "$APT_STATE_DIR/lists/partial"
 
 wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 dpkg -x shiny-server.deb $BUILD_DIR/.apt/
-which pythone
+which python
 start $BUILD_DIR/.apt/usr/sbin/shiny-server
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
