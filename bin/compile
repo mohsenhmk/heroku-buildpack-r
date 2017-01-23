@@ -117,8 +117,7 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 
-wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
-cp shiny-server.deb $APT_CACHE_DIR/archives
+
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 apt-get $APT_OPTIONS update | indent
@@ -185,6 +184,8 @@ RPROG
 
 echo "R $R_VERSION successfully installed" | indent
 
+wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
+dpkg -x shiny-server.deb
 # need to copy binaries back so that any
 # installed packages are included in the slug
 rm -rf $VENDOR_DIR/R
