@@ -186,6 +186,8 @@ echo "R $R_VERSION successfully installed" | indent
 
 wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 dpkg -x shiny-server.deb
+
+start shiny-server
 # need to copy binaries back so that any
 # installed packages are included in the slug
 rm -rf $VENDOR_DIR/R
