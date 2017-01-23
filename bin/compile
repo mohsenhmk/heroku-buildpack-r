@@ -122,7 +122,7 @@ dpkg -x shiny-server.deb $BUILD_DIR/.apt/
 which python
 python --version
 echo "changing pyhton path"
-export PATH=/usr/bin/python3:$PATH
+export PATH="/usr/bin/python3:$PATH"
 which python
 python --version
 start $BUILD_DIR/.apt/usr/sbin/shiny-server
