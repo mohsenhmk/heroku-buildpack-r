@@ -93,13 +93,7 @@ mkdir -p /app/.apt
 
 
 
-which python
-python --version
-echo "changing pyhton path"
-export PATH="/usr/bin/python3:$PATH"
-alias python=python3
-which python
-python --version
+
 
 
 
@@ -116,22 +110,14 @@ function indent() {
 }
 echo "Updating apt caches"
 
-
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
-
-
-wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
-dpkg -x shiny-server.deb $BUILD_DIR/.apt/
-
-start $BUILD_DIR/.apt/usr/sbin/shiny-server
-
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 apt-get $APT_OPTIONS update | indent
 apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gfortran | indent
-//apt-get $APT_OPTIONS -y --force-yes -d install --reinstall shiny-server | indent
+apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gdebi-core | indent
 # apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libv8-dev | indent
 cp $BUILD_DIR/pandoc.deb $APT_CACHE_DIR/archives/
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
@@ -188,11 +174,10 @@ echo "Executing init.r script" | indent
   `cat $BUILD_DIR/init.r`
 RPROG
 
-# 
-# apt-get $APT_OPTIONS -y --force-yes -d install --reinstall shiny-server.deb | indent
+wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
+gdebi shiny-server.deb
 
 echo "R $R_VERSION successfully installed" | indent
-
 
 # need to copy binaries back so that any
 # installed packages are included in the slug
