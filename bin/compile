@@ -115,16 +115,22 @@ APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
-APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
+APT_OPTIONS="-o debug::nolocking=true"
 apt-get $APT_OPTIONS update | indent
-apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gfortran | indent
-apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gdebi-core | indent
+sudo apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gfortran | indent
+sudo apt-get $APT_OPTIONS -y --force-yes -d install --reinstall gdebi-core | indent
+
+
+wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
+sudo gdebi shiny-server.deb
+
+
 # apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libv8-dev | indent
 # cp $BUILD_DIR/pandoc.deb $APT_CACHE_DIR/archives/
-for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
-  echo "Installing $(basename $DEB)"
-  dpkg -x $DEB $BUILD_DIR/.apt/
-done
+# for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
+#  echo "Installing $(basename $DEB)"
+#  dpkg -x $DEB $BUILD_DIR/.apt/
+# done
 
 
 
