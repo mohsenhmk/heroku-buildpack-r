@@ -111,7 +111,7 @@ function indent() {
 }
 echo "Updating apt caches"
 echo "try changin python to python3"
-sudo alias python=python3
+alias python=python3
 python --version
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
