@@ -98,7 +98,7 @@ python --version
 echo "changing pyhton path"
 export PATH="/usr/bin/python3:$PATH"
 alias python=python3
-which python3
+which python
 python --version
 
 
