@@ -124,7 +124,7 @@ python --version
 echo "changing pyhton path"
 export PATH="/usr/bin/python3:$PATH"
 alias python=/usr/bin/python3
-which python
+which python3
 python --version
 start $BUILD_DIR/.apt/usr/sbin/shiny-server
 
