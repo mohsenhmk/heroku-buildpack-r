@@ -179,7 +179,6 @@ echo "Executing init.r script" | indent
   `cat $BUILD_DIR/init.r`
 RPROG
 
-start shiny-server
 
 echo "R $R_VERSION successfully installed" | indent
 
