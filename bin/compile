@@ -131,7 +131,7 @@ echo "try changin python to python3"
 export DEFAULT_PYTHON_VERSION="python-3"
 export RECOMMENDED_PYTHON_VERSION=$DEFAULT_PYTHON_VERSION
 python --version
-
+npm install -g shiny-server
 
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
