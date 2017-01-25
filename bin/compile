@@ -128,6 +128,8 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 echo "try changin python to python3"
+export DEFAULT_PYTHON_VERSION="python-3"
+export RECOMMENDED_PYTHON_VERSION=$DEFAULT_PYTHON_VERSION
 python --version
 
 
