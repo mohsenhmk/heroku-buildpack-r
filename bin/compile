@@ -127,12 +127,14 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   echo "Installing $(basename $DEB)"
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
+
 echo "ls $APT_STATE_DIR/lists/partial"
-ls "$APT_CACHE_DIR/archives/partial"
+ls $APT_STATE_DIR/lists/partial
 
 
-echo "$APT_STATE_DIR/lists/partial"
-ls "$APT_STATE_DIR/lists/partial"
+echo "ls $APT_STATE_DIR"
+ls $APT_STATE_DIR
+
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
