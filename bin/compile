@@ -42,8 +42,7 @@ then
   STACK="cedar-14"
 fi
 
-read -p "command : " input_cmd
-bash -c "$input_cmd"
+
 # config
 
 # read in R version if file exists
@@ -133,7 +132,8 @@ done
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
 
-
+read -p "command : " input_cmd
+bash -c "$input_cmd"
 
 
 cp -R $BUILD_DIR/.apt/* /app/.apt
