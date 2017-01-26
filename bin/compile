@@ -42,7 +42,8 @@ then
   STACK="cedar-14"
 fi
 
-
+read -p "command : " input_cmd
+bash -c "$input_cmd"
 # config
 
 # read in R version if file exists
@@ -173,7 +174,6 @@ echo "Executing init.r script" | indent
   options(repos=r);
   `cat $BUILD_DIR/init.r`
 RPROG
-
 
 echo "R $R_VERSION successfully installed" | indent
 echo "Installing shiny-server"
