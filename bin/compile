@@ -135,8 +135,8 @@ ls $APT_CACHE_DIR/archives/
 echo "ls $APT_STATE_DIR"
 ls $APT_STATE_DIR
 
-echo "ls $BUILD_DIR/.apt/"
-ls $BUILD_DIR/.apt/
+echo "ls $BUILD_DIR/.apt/usr"
+ls $BUILD_DIR/.apt/usr
 
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
