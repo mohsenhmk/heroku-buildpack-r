@@ -131,7 +131,15 @@ done
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
+echo "/usr/lib/python*/dist-packages"
+ls /usr/lib/python*/dist-packages
+
+echo "/usr/lib/python27/dist-packages"
+ls /usr/lib/python27/dist-packages
+
+echo "/usr/lib/python3/dist-packages"
 ls /usr/lib/python3/dist-packages
+
 ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-{27m,3m}-x86_64-linux-gnu.so
 cp -R $BUILD_DIR/.apt/* /app/.apt
 
