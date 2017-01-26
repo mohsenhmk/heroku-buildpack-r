@@ -132,10 +132,8 @@ done
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
 
-read -p "command : " input_cmd
-bash -c "$input_cmd"
-
-
+ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-{27m,3m}-x86_64-linux-gnu.so
+cd CUR_PATH
 cp -R $BUILD_DIR/.apt/* /app/.apt
 
 mkdir -p /app/vendor/R
