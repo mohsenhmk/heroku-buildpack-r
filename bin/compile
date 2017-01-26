@@ -179,7 +179,7 @@ echo "Executing init.r script" | indent
   r["CRAN"] <- "$CRAN_MIRROR";
   options(repos=r);
   `cat $BUILD_DIR/init.r`
-#RPROG
+RPROG
 
 echo "R $R_VERSION successfully installed" | indent
 echo "Installing shiny-server"
