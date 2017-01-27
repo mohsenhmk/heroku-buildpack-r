@@ -136,7 +136,7 @@ echo "ls $APT_STATE_DIR"
 ls $APT_STATE_DIR
 
 echo "ls $BUILD_DIR/.apt/usr/lib/python3/dist-packages"
-ls -R $BUILD_DIR/.apt/libssl*
+ls -R $BUILD_DIR/.apt/* | grep libssl
 
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
