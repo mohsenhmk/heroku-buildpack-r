@@ -110,6 +110,7 @@ function indent() {
   esac
 }
 echo "Updating apt caches"
+mkdir /usr/lib64
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
@@ -177,6 +178,8 @@ RPROG
 echo "R $R_VERSION successfully installed" | indent
 echo "Installing shiny-server"
 wget -O shiny-server.deb http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
+cp /tmp/staged/app/.apt/lib/x86_64-linux-gnu/libcrypto.so.0.9.8 /usr/lib64
+cp /tmp/staged/app/.apt/lib/x86_64-linux-gnu/libssl.so.0.9.8 /usr/lib64
 gdebi shiny-server.deb
 
 # need to copy binaries back so that any
