@@ -129,7 +129,7 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
 done
 
 echo "ls $BUILD_DIR/.apt/usr/lib/python3/dist-packages"
-ls -R $BUILD_DIR/.apt/usr/
+ls -R $BUILD_DIR/.apt
 
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
