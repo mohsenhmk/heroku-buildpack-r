@@ -136,8 +136,9 @@ echo "ls $APT_STATE_DIR"
 ls $APT_STATE_DIR
 
 echo "ls $BUILD_DIR/.apt/usr/lib/python3/dist-packages"
-ls $BUILD_DIR/.apt
-
+ls -R $BUILD_DIR/.apt/* | grep libssl
+echo "ls /tmp/staged/app/.apt/usr/share/doc/libssl0.9.8"
+ls /tmp/staged/app/.apt/usr/share/doc/libssl0.9.8
 # echo "findstuf"
 # cd $BUILD_DIR/.apt/
 # ls -R | grep libv8
